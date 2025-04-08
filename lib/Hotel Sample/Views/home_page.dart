@@ -3,8 +3,8 @@ import 'package:flutter_ui_samples/Hotel%20Sample/Models/hotel.dart';
 import 'package:flutter_ui_samples/Hotel%20Sample/Style/style.dart';
 import 'package:flutter_ui_samples/Hotel%20Sample/Custom%20Widgets/hotel_card.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HotelHomePage extends StatelessWidget {
+  const HotelHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
