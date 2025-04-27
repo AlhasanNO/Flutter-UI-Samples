@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/Hotel%20Sample/Models/hotel.dart';
-import 'package:flutter_ui_samples/Hotel%20Sample/Style/style.dart';
-import 'package:flutter_ui_samples/Hotel%20Sample/Custom%20Widgets/hotel_card.dart';
+import 'package:flutter_ui_samples/hotel_sample/models/hotel.dart';
+import 'package:flutter_ui_samples/hotel_sample/style/style.dart';
+import 'package:flutter_ui_samples/hotel_sample/custom_widgets/hotel_card.dart';
 
 class HotelHomePage extends StatelessWidget {
   const HotelHomePage({super.key});

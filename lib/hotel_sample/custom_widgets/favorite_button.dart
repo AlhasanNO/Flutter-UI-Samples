@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/Hotel%20Sample/Style/style.dart';
+import 'package:flutter_ui_samples/hotel_sample/style/style.dart';
 
 class FavoriteButton extends StatefulWidget {
   const FavoriteButton({super.key});
