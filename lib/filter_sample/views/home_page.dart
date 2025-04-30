@@ -4,7 +4,7 @@ import 'package:flutter_ui_samples/filter_sample/custom_widgets/radio_buttons.da
 import 'package:flutter_ui_samples/filter_sample/style/styles.dart';
 
 class FilterHomePage extends StatelessWidget {
-  FilterHomePage({super.key});
+  const FilterHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
