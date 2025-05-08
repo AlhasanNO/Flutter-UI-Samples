@@ -17,7 +17,7 @@ class _RadioExampleState extends State<RadioExample> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
+      children: [
         Text(
           'VIEW',
           style: style2,
@@ -27,7 +27,7 @@ class _RadioExampleState extends State<RadioExample> {
           children: [
             Transform.scale(
               scale: 1.2,
-              child: Radio<Choices>(
+              child: Radio(
                 activeColor: Color(0xFFbab8d0),
                 value: Choices.choice1,
                 groupValue: _choice,
@@ -38,7 +38,7 @@ class _RadioExampleState extends State<RadioExample> {
                 },
               ),
             ),
-            SizedBox(width: 15),
+            SizedBox(width: 5.0),
             Text(
               'All job posts',
               style: style2,
@@ -61,7 +61,7 @@ class _RadioExampleState extends State<RadioExample> {
                 },
               ),
             ),
-            SizedBox(width: 15),
+            SizedBox(width: 5.0),
             Text(
               'Active job posts',
               style: style2,
@@ -84,7 +84,7 @@ class _RadioExampleState extends State<RadioExample> {
                 },
               ),
             ),
-            SizedBox(width: 15),
+            SizedBox(width: 5.0),
             Text(
               'Acheved job posts',
               style: style2,

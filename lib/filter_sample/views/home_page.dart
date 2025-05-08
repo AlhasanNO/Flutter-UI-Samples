@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/filter_sample/custom_widgets/check_box_button.dart';
-import 'package:flutter_ui_samples/filter_sample/custom_widgets/radio_buttons.dart';
+import 'package:flutter_ui_samples/filter_sample/views/custom_widgets/check_box_button.dart';
+import 'package:flutter_ui_samples/filter_sample/views/custom_widgets/radio_buttons.dart';
 import 'package:flutter_ui_samples/filter_sample/style/styles.dart';
 
 class FilterHomePage extends StatelessWidget {
@@ -9,10 +9,11 @@ class FilterHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Color(0xFF322e59),
-        child: Padding(
+      backgroundColor: Color(0xFF322e59),
+      body: Center(
+        child: Container(
           padding: const EdgeInsets.all(45.0),
+          height: 700.0,
           child: Column(
             children: [
               Row(
@@ -60,14 +61,14 @@ class FilterHomePage extends StatelessWidget {
                 height: 20.0,
               ),
               SizedBox(
-                height: 135.0,
+                height: 180.0,
                 child: RadioExample(),
               ),
               SizedBox(
-                height: 10.0,
+                height: 20.0,
               ),
               CheckBoxDemo(),
-              SizedBox(height: 180.0),
+              Spacer(),
               SizedBox(
                 height: 50.0,
                 width: double.infinity,
@@ -81,6 +82,7 @@ class FilterHomePage extends StatelessWidget {
                   ),
                   child: Text(
                     'Save Changes',
+                    style: TextStyle(color: Colors.black),
                   ),
                 ),
               ),

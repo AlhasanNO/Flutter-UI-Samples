@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_samples/filter_sample/views/home_page.dart';
 import 'package:flutter_ui_samples/profile_sample/home_page.dart';
 import 'package:flutter_ui_samples/subscription_sample/views/home_page.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ProfileHomePage(),
+      home: FilterHomePage(),
     );
   }
 }

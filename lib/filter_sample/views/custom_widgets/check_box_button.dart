@@ -32,7 +32,7 @@ class _CheckBoxDemoState extends State<CheckBoxDemo> {
                 });
               },
             ),
-            SizedBox(width: 15.0),
+            SizedBox(width: 5.0),
             Text(
               'Jobs shared with me',
               style: style2,
