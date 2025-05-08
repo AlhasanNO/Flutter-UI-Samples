@@ -1,5 +1,5 @@
+import 'package:flutter_ui_samples/subscription_sample/views/custom_widgets/check_box_demo.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/subscription_sample/custom_widgets/check_box_demo.dart';
 
 class SubscriptionHomePage extends StatelessWidget {
   const SubscriptionHomePage({super.key});
