@@ -1,16 +1,39 @@
-import 'package:flutter_ui_samples/subscription_sample/views/custom_widgets/check_box_demo.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_samples/subscription_sample/views/custom_widgets/list_item.dart';
 
-class SubscriptionHomePage extends StatelessWidget {
+class SubscriptionHomePage extends StatefulWidget {
   const SubscriptionHomePage({super.key});
+
+  @override
+  State<SubscriptionHomePage> createState() => _SubscriptionHomePageState();
+}
+
+class _SubscriptionHomePageState extends State<SubscriptionHomePage> {
+  Choices _selectedChoice = Choices.choice1;
+  final Uri _url = Uri.parse('https://flutter.dev');
+
+  void _handleRadioChange(Choices? value) {
+    setState(() {
+      _selectedChoice = value!;
+    });
+  }
+
+  Future<void> _openUrl() async {
+    !await launchUrl(
+      _url,
+      mode: LaunchMode.inAppBrowserView,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Container(
-          color: Colors.white,
-          padding: EdgeInsets.all(40.0),
+          padding: EdgeInsets.all(35.0),
+          height: 670.0,
           child: Column(
             children: [
               Text('Try FREE for 4 weeks',
@@ -19,85 +42,23 @@ class SubscriptionHomePage extends StatelessWidget {
               Text('We uncover the facts around the'),
               Text('clock, all over the globe.'),
               SizedBox(height: 20.0),
-              Container(
-                padding: EdgeInsets.all(12),
-                margin: EdgeInsets.symmetric(vertical: 8),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.blue,
-                  ),
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: Colors.white,
-                ),
-                child: ListTile(
-                  leading: CheckboxDemo(),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'MONTHLY',
-                        style: TextStyle(
-                          fontSize: 11.0,
-                        ),
-                      ),
-                      Text(
-                        '4 weeks for free',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text('Then 3D every month for the first year'),
-                ),
+              ListItem(
+                radioChoice: Choices.choice1,
+                isBestValue: false,
+                duration: 'MONTHLY',
+                freeTrial: '4 weeks for free',
+                price: 'Then 3D every month for the first year',
+                groupValue: _selectedChoice,
+                onChanged: _handleRadioChange,
               ),
-              Container(
-                padding: EdgeInsets.all(12),
-                margin: EdgeInsets.symmetric(vertical: 8),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey,
-                  ),
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: Colors.white,
-                ),
-                child: ListTile(
-                  leading: CheckboxDemo(),
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.blue,
-                        ),
-                        padding: EdgeInsets.only(
-                            left: 10.0, right: 10.0, top: 3.0, bottom: 3.0),
-                        child: Text(
-                          'Best Value',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.0,
-                              color: Colors.white),
-                        ),
-                      ),
-                      SizedBox(height: 3.0),
-                      Text(
-                        'YEARLY',
-                        style: TextStyle(
-                          fontSize: 11.0,
-                        ),
-                      ),
-                      Text(
-                        '4 weeks for free',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  subtitle: Text('Then 30D for the first year'),
-                ),
+              ListItem(
+                radioChoice: Choices.choice2,
+                isBestValue: true,
+                duration: 'YEARLY',
+                freeTrial: '4 weeks for free',
+                price: 'Then 30D for the first year',
+                groupValue: _selectedChoice,
+                onChanged: _handleRadioChange,
               ),
               SizedBox(height: 30.0),
               SizedBox(
@@ -119,19 +80,40 @@ class SubscriptionHomePage extends StatelessWidget {
                 child: ElevatedButton(
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.white,
+                    elevation: 0.0,
+                    side: BorderSide(
+                      color: Colors.black12,
+                      width: 1.0,
+                    ),
                   ),
                   onPressed: () {},
-                  child: Text('Continue with PayPal',
-                      style: TextStyle(color: Colors.black)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Continue with ',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      Image.network(
+                        'https://cdn.iconscout.com/icon/free/png-512/free-paypal-logo-icon-download-in-svg-png-gif-file-formats--online-payment-logos-pack-icons-226456.png',
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
                 height: 35.0,
               ),
-              Text(
-                'View more offers',
-                style: TextStyle(
-                  color: Colors.blue,
+              InkWell(
+                onTap: () => _openUrl,
+                child: Text(
+                  'View more offers',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.blue,
+                    decorationThickness: 2.0,
+                  ),
                 ),
               ),
             ],

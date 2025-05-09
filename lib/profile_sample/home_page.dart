@@ -109,21 +109,22 @@ class ProfileHomePage extends StatelessWidget {
                               ElevatedButton(
                                   onPressed: () {}, child: Text('Message')),
                               ElevatedButton(
-                                  style: TextButton.styleFrom(
-                                    backgroundColor: Colors.white,
-                                    elevation: 0.0,
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(
-                                        color: Colors.black45,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.0),
+                                style: TextButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  elevation: 0.0,
+                                  shape: RoundedRectangleBorder(
+                                    side: BorderSide(
+                                      color: Colors.black45,
                                     ),
+                                    borderRadius: BorderRadius.circular(20.0),
                                   ),
-                                  onPressed: () {},
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('Follow'),
-                                  )),
+                                ),
+                                onPressed: () {},
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Follow'),
+                                ),
+                              ),
                             ],
                           )
                         ],
