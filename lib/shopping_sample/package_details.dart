@@ -8,9 +8,9 @@ class PackageDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xfff7f7f7),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xfff7f7f7),
         title: Text(
           'Package Details',
           style: TextStyle(fontWeight: FontWeight.bold),

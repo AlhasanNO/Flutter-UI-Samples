@@ -43,14 +43,20 @@ class CompleteDeleveryCard extends StatelessWidget {
                       children: [
                         Text(
                           'ID Number',
-                          style: TextStyle(fontSize: 12.0),
+                          style: TextStyle(
+                            fontSize: 12.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                         SizedBox(
                           height: 5.0,
                         ),
                         Text(
                           'JK126K532',
-                          style: TextStyle(fontSize: 16.0),
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                       ],
                     ),
@@ -80,11 +86,17 @@ class CompleteDeleveryCard extends StatelessWidget {
                       children: [
                         Text(
                           'Tracking Number',
-                          style: TextStyle(fontSize: 10.0),
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                         Text(
                           '34589762',
-                          style: TextStyle(fontSize: 13.0),
+                          style: TextStyle(
+                            fontSize: 13.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                       ],
                     ),
@@ -93,11 +105,17 @@ class CompleteDeleveryCard extends StatelessWidget {
                       children: [
                         Text(
                           'Data Shipped',
-                          style: TextStyle(fontSize: 10.0),
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                         Text(
                           '13 JUL. 2024',
-                          style: TextStyle(fontSize: 13.0),
+                          style: TextStyle(
+                            fontSize: 13.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                       ],
                     ),
@@ -106,11 +124,17 @@ class CompleteDeleveryCard extends StatelessWidget {
                       children: [
                         Text(
                           'Location',
-                          style: TextStyle(fontSize: 10.0),
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                         Text(
                           'Aldo',
-                          style: TextStyle(fontSize: 13.0),
+                          style: TextStyle(
+                            fontSize: 13.0,
+                            color: Color(0xff090909),
+                          ),
                         ),
                       ],
                     )
@@ -131,48 +155,68 @@ class CompleteDeleveryCard extends StatelessWidget {
                       bottomLeft: Radius.circular(30.0),
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.send,
-                        color: Color(0xfff98602),
-                      ),
-                      SizedBox(
-                        width: 5.0,
-                      ),
-                      Text(
-                        'Track',
-                        style: TextStyle(
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                        side: BorderSide(
+                          color: Colors.black26,
+                          width: 0.5,
+                        ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(30.0)))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.send,
                           color: Color(0xfff98602),
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Text(
+                          'Track',
+                          style: TextStyle(
+                            color: Color(0xfff98602),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return PackageDetails();
-                        },
-                      ),
-                    );
-                  },
-                  child: Container(
-                    height: 45.0,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFf6f6f6),
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(30.0),
-                      ),
+                child: Container(
+                  height: 45.0,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFf6f6f6),
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(30.0),
                     ),
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PackageDetails();
+                          },
+                        ),
+                      );
+                    },
+                    style: TextButton.styleFrom(
+                        side: BorderSide(
+                          color: Colors.black26,
+                          width: 0.5,
+                        ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(30.0)))),
                     child: Center(
                       child: Text(
                         'View Details',
+                        style: TextStyle(color: Color(0xff090909)),
                       ),
                     ),
                   ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ListViewItem extends StatefulWidget {
-  const ListViewItem({super.key, required this.content});
+class StatusButton extends StatefulWidget {
+  const StatusButton({super.key, required this.content});
   final String content;
 
   @override
-  State<ListViewItem> createState() => _ListViewItemState();
+  State<StatusButton> createState() => _StatusButtonState();
 }
 
-class _ListViewItemState extends State<ListViewItem> {
+class _StatusButtonState extends State<StatusButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(

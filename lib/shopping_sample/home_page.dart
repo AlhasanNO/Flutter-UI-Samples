@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_samples/shopping_sample/custom_widgets/complete_delevery_card.dart';
 import 'package:flutter_ui_samples/shopping_sample/custom_widgets/in_delevry_card.dart';
-import 'package:flutter_ui_samples/shopping_sample/custom_widgets/list_view_item.dart';
+import 'package:flutter_ui_samples/shopping_sample/custom_widgets/status_button.dart';
 
 class ShoppingHomePage extends StatelessWidget {
   const ShoppingHomePage({super.key});
@@ -9,9 +9,9 @@ class ShoppingHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xfff7f7f7),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xfff7f7f7),
         title: Text(
           'Shopping Record',
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -25,31 +25,33 @@ class ShoppingHomePage extends StatelessWidget {
             Container(
               height: 45.0,
               margin: EdgeInsets.all(4.0),
-              child: ListView(
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  ListViewItem(content: 'All'),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  ListViewItem(content: 'Complete'),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  ListViewItem(content: 'In Delevery'),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  ListViewItem(content: 'All'),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  ListViewItem(content: 'Complete'),
-                  SizedBox(
-                    width: 10.0,
-                  ),
-                  ListViewItem(content: 'In Delevery'),
-                ],
+                child: Row(
+                  children: [
+                    StatusButton(content: 'All'),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    StatusButton(content: 'Complete'),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    StatusButton(content: 'In Delevery'),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    StatusButton(content: 'All'),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    StatusButton(content: 'Complete'),
+                    SizedBox(
+                      width: 10.0,
+                    ),
+                    StatusButton(content: 'In Delevery'),
+                  ],
+                ),
               ),
             ),
             SizedBox(

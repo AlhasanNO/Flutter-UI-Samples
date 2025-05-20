@@ -30,29 +30,38 @@ class ShippingStatusCard extends StatelessWidget {
               height: 10.0,
             ),
             Stepper(
+              stepIconBuilder: (stepIndex, stepState) {
+                return Icon(
+                  Icons.radio_button_checked,
+                );
+              },
               controlsBuilder: (context, details) {
                 return Container();
               },
               steps: [
                 Step(
-                    title: Text('Moving from'),
-                    subtitle: Text('June 10, 2018 03:45pm'),
-                    content: Text(''),
-                    state: StepState.complete),
+                  title: Text('Moving from'),
+                  subtitle: Text('June 10, 2018 03:45pm'),
+                  content: Text(''),
+                  stepStyle: StepStyle(color: Colors.white),
+                ),
                 Step(
                   title: Text('In transit'),
                   subtitle: Text('Jackline Tower, New York'),
                   content: Text(''),
+                  stepStyle: StepStyle(color: Colors.white),
                 ),
                 Step(
                   title: Text('Out of delevery'),
                   subtitle: Text('Traking number'),
                   content: Text(''),
+                  stepStyle: StepStyle(color: Colors.white),
                 ),
                 Step(
-                  title: Text('Delevery'),
+                  title: Text('Delivery'),
                   subtitle: Text('Not delevered yet'),
                   content: Text(''),
+                  stepStyle: StepStyle(color: Colors.white),
                 ),
               ],
             ),
